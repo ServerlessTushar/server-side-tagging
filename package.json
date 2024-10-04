@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@google-cloud/functions-framework": "^3.4.2",
-    "@next/third-parties": "^14.2.14",
     "autoprefixer": "^10.4.20",
     "next": "^14.2.14",
     "react": "^18",

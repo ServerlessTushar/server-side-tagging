@@ -60,38 +60,36 @@
 // }
 
 
-import { sendGTMEvent } from '@next/third-parties/google'
-
 export function EventButton() {
   //const [loading, setLoading] = useState(false);
  //const [error, setError] = useState<string | null>(null);
 
-  // const handleClick = () => {
-  //   if (typeof window !== 'undefined') {
-  //     // Push event to GTM dataLayer
-  //     window.dataLayer = window.dataLayer || [];
-  //     window.dataLayer.push({
-  //       event: "button_click", // Event name
-  //       data: {
-  //         VALUE: "xyz",
-  //         CTA_Button_Text: "Send Event",
-  //         Landing_Page_URL: `${window.location.origin}${pathname}`,
-  //       },
-  //     });
+  const handleClick = () => {
+    if (typeof window !== 'undefined') {
+      // Push event to GTM dataLayer
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "button_click", // Event name
+        data: {
+          VALUE: "xyz",
+          CTA_Button_Text: "Send Event",
+          Landing_Page_URL: `homepage`,
+        },
+      });
 
-  //     console.log('Event sent to GTM dataLayer');
-  //   }
-  // };
+      console.log('Event sent to GTM dataLayer');
+    }
+  };
 
-  const handleClick = async () => {
-    sendGTMEvent({
-      event: "Button Click",
-      value: {
-        "CTA Button text": 'Send Event',
-        "Landing Page URL": "homepage",
-      },
-    })
-  }
+  // const handleClick = async () => {
+  //   sendGTMEvent({
+  //     event: "Button Click",
+  //     value: {
+  //       "CTA Button text": 'Send Event',
+  //       "Landing Page URL": "homepage",
+  //     },
+  //   })
+  // }
 
     return (
     <>
