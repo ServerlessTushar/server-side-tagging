@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold mb-6 text-center">Welcome to the world of Server Side Tagging</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center">Welcome to Server Side Tagging</h1>
       <EventButton />
     </div>
   );
