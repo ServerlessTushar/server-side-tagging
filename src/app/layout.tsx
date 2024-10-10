@@ -46,15 +46,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <noscript>
+        <noscript>
           <iframe 
-            src="https://42c5-14-143-179-162.ngrok-free.app/api/gtm/ns.html?id=GTM-T9BNSS83" 
+            src="https://server-side-tagging-plum.vercel.app/api/gtm/ns.html?id=GTM-T9BNSS83" 
             height="0" 
             width="0" 
             style={{ display:'none', visibility:'hidden' }}
           >
           </iframe>
-        </noscript> */}
+        </noscript>
         {children}
       </body>
     </html>
