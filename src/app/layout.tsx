@@ -37,7 +37,7 @@ export default function RootLayout({
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             '/js/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-T9BNSS83');`,
+            })(window,document,'script','dataLayer','GTM-MZ7ZLG9');`,
           }}></Script>
           
       {/* <GoogleTagManager gtmId={'GTM-T9BNSS83'} serverSideContainerUrl={'https://localhost:3003/api/gtm'}/> */}
@@ -46,7 +46,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <noscript>
+        {/* <noscript>
           <iframe 
             src="https://server-side-tagging-plum.vercel.app/api/gtm/ns.html?id=GTM-T9BNSS83" 
             height="0" 
@@ -54,7 +54,7 @@ export default function RootLayout({
             style={{ display:'none', visibility:'hidden' }}
           >
           </iframe>
-        </noscript>
+        </noscript> */}
         {children}
       </body>
     </html>
