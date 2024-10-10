@@ -152,22 +152,22 @@
 
 //// app/api/gtm/route.ts
 // import { NextResponse } from 'next/server';
-//import { readFileSync } from 'fs';
-//import { join } from 'path';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import { NextRequest, NextResponse } from 'next/server';
 
-// export async function GET() {
-//   // Path to the gtm.js file in your project (adjust the path as necessary)
-//   const gtmFilePath = join(process.cwd(), 'src', 'scripts', 'gtm.js');
-//   const gtmScript = readFileSync(gtmFilePath, 'utf8');
+export async function GET() {
+  // Path to the gtm.js file in your project (adjust the path as necessary)
+  const gtmFilePath = join(process.cwd(), 'src', 'scripts', 'gtm.js');
+  const gtmScript = readFileSync(gtmFilePath, 'utf8');
 
-//   // Return the script with the correct content type
-//   return new NextResponse(gtmScript, {
-//     headers: {
-//       'Content-Type': 'application/javascript',
-//     },
-//   });
-// }
+  // Return the script with the correct content type
+  return new NextResponse(gtmScript, {
+    headers: {
+      'Content-Type': 'application/javascript',
+    },
+  });
+}
 
 //--------------------
 
@@ -196,27 +196,26 @@ export async function POST(req: NextRequest) {
   }
   
   // Handle GET requests (for loading GTM script)
-export async function GET(req: NextRequest) {
-  const gtmId = req.nextUrl.searchParams.get('id'); // Get GTM ID from query parameters
-  const gtmUrl = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`; // Google's GTM URL with your GTM ID
+// export async function GET(req: NextRequest) {
+//   const gtmId = req.nextUrl.searchParams.get('id'); // Get GTM ID from query parameters
+//   const gtmUrl = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`; // Google's GTM URL with your GTM ID
 
-  try {
-    const response = await fetch(gtmUrl); // Fetch GTM script from Google
-    const gtmScript = await response.text(); // Get the script content as text
+//   try {
+//     const response = await fetch(gtmUrl); // Fetch GTM script from Google
+//     const gtmScript = await response.text(); // Get the script content as text
 
-    return new NextResponse(gtmScript, {
-      headers: {
-        'Content-Type': 'application/javascript',
-      },
-    });
-  } catch (error) {
-    console.log("error: ", error)
-    return new NextResponse(JSON.stringify({ error: 'Failed to load GTM script' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
-}
+//     return new NextResponse(gtmScript, {
+//       headers: {
+//         'Content-Type': 'application/javascript',
+//       },
+//     });
+//   } catch (error) {
+//     return new NextResponse(JSON.stringify({ error: 'Failed to load GTM script' }), {
+//       status: 500,
+//       headers: { 'Content-Type': 'application/json' },
+//     });
+//   }
+// }
 
 //----------------------
 
